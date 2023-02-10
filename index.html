@@ -10,20 +10,66 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.1.96/css/materialdesignicons.min.css"
     integrity="sha512-NaaXI5f4rdmlThv3ZAVS44U9yNWJaUYWzPhvlg5SC7nMRvQYV9suauRK3gVbxh7qjE33ApTPD+hkOW78VSHyeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monofett&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>pokedex</title>
 </head>
 
-<body>
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="debug img">
   <header>
+    <div class="container-fluid h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-6 display-5 text-center">POKEDEX</div>
+      </div>
+    </div>
   </header>
 
   <main>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+      <div class="row justify-content-evenly my-3">
+        <div class="col-md-5 poke-list-card">
+          <div class="text-center py-4 my-1 list-title">
+            Pokemon
+          </div>
+          <div class="list px-3 scroll" id="pokemon-list">
+            <div>name</div>
+            <div>name</div>
+            <div>name</div>
+            <div>name</div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="row justify-content-center align-content-center active-pokemon" id="active-pokemon">
+            <div class="col-md-12 name-card text-center">Name</div>
+            <div class="col-md-12 poke-img flex-grow-1"><img src="" alt=""></div>
+            <div class="col-md-12 stats-card d-flex text-center">
+              <div class="col-md-3"></div>
+              <div class="col-md-3"></div>
+              <div class="col-md-3"></div>
+              <div class="col-md-3"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
